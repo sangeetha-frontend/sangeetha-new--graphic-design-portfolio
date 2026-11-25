@@ -72,17 +72,38 @@
       padding: 6px 14px; border-radius: 20px; font-size: 0.88rem; color: var(--muted);
     }
 
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    
+    /* Project Card with Image Styling */
     .card {
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
+      border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 92, 255, 0.4);
+    }
+    .card-img-wrapper {
+      width: 100%; height: 220px; overflow: hidden; background: var(--surface-2);
+    }
+    .card-img-wrapper img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-img-wrapper img {
+      transform: scale(1.04);
+    }
+    .card-content {
+      padding: 22px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;
+    }
+    
     .tag {
       display: inline-block; font-size: 0.78rem; padding: 4px 10px;
       border-radius: 6px; background: var(--surface-2); color: var(--accent-2); margin-bottom: 12px;
     }
     .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
-    .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
 
     .contact-box {
       background: linear-gradient(135deg, rgba(124, 92, 255, 0.16), rgba(34, 211, 238, 0.12));
@@ -147,45 +168,72 @@
           <h2>Featured Design Projects</h2>
         </div>
         <div class="grid-3">
+
           <article class="card">
-            <div>
-              <span class="tag">Typography • Poster Design</span>
-              <h3>Typography Poster</h3>
-              <p>Bold visual exploration emphasizing type hierarchy, grid discipline, and high-contrast composition.</p>
+            <div class="card-img-wrapper">
+              <img src="images/typography-poster.png" alt="Typography Poster Design" />
+            </div>
+            <div class="card-content">
+              <div>
+                <span class="tag">Typography • Poster Design</span>
+                <h3>Typography Poster</h3>
+                <p>Bold visual exploration emphasizing type hierarchy, grid discipline, and high-contrast composition.</p>
+              </div>
             </div>
           </article>
 
           <article class="card">
-            <div>
-              <span class="tag">Logo Design</span>
-              <h3>NOVARA</h3>
-              <p>Minimalist vector brand mark crafted for modern identity, clarity, and cross-platform scalability.</p>
+            <div class="card-img-wrapper">
+              <img src="images/novara-logo.png" alt="NOVARA Logo Design" />
+            </div>
+            <div class="card-content">
+              <div>
+                <span class="tag">Logo Design</span>
+                <h3>NOVARA</h3>
+                <p>Minimalist vector brand mark crafted for modern identity, clarity, and cross-platform scalability.</p>
+              </div>
             </div>
           </article>
 
           <article class="card">
-            <div>
-              <span class="tag">Brand Identity</span>
-              <h3>MELLOW</h3>
-              <p>Cohesive brand system featuring custom color palettes, typography specs, and visual style guidelines.</p>
+            <div class="card-img-wrapper">
+              <img src="images/mellow-brand.png" alt="MELLOW Brand Identity" />
+            </div>
+            <div class="card-content">
+              <div>
+                <span class="tag">Brand Identity</span>
+                <h3>MELLOW</h3>
+                <p>Cohesive brand system featuring custom color palettes, typography specs, and visual style guidelines.</p>
+              </div>
             </div>
           </article>
 
           <article class="card">
-            <div>
-              <span class="tag">Social Media Design</span>
-              <h3>BLOOM</h3>
-              <p>High-converting social-first graphics designed to boost audience engagement and brand presence.</p>
+            <div class="card-img-wrapper">
+              <img src="images/bloom-social.png" alt="BLOOM Social Media Design" />
+            </div>
+            <div class="card-content">
+              <div>
+                <span class="tag">Social Media Design</span>
+                <h3>BLOOM</h3>
+                <p>High-converting social-first graphics designed to boost audience engagement and brand presence.</p>
+              </div>
             </div>
           </article>
 
           <article class="card">
-            <div>
-              <span class="tag">Advertising • Campaign</span>
-              <h3>Advertising Design</h3>
-              <p>Targeted promotional ad creatives structured for campaign clarity and visual impact.</p>
+            <div class="card-img-wrapper">
+              <img src="images/advertising-design.png" alt="Advertising Campaign Design" />
+            </div>
+            <div class="card-content">
+              <div>
+                <span class="tag">Advertising • Campaign</span>
+                <h3>Advertising Design</h3>
+                <p>Targeted promotional ad creatives structured for campaign clarity and visual impact.</p>
+              </div>
             </div>
           </article>
+
         </div>
       </div>
     </section>
